@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./index.css";
+import "./app.css";
 
 function App() {
   const [otp, setOtp] = useState(null);
@@ -8,22 +8,17 @@ function App() {
 
   const isCounting = secondsLeft > 0;
 
+  // Generate a 6-digit OTP
   const generateOtp = () => Math.floor(100000 + Math.random() * 900000);
 
+  // Handle Generate OTP button
   const handleGenerateOtp = () => {
     setOtp(generateOtp());
     setSecondsLeft(5);
-    setCopied(false); // reset copied status
+    setCopied(false); // reset copied state when new OTP is generated
   };
 
-  const handleCopyOtp = () => {
-    if (!otp) return; // nothing to copy
-    navigator.clipboard.writeText(otp).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500); // hide tooltip after 1.5s
-    });
-  };
-
+  // Countdown timer logic
   useEffect(() => {
     if (!isCounting) return;
 
@@ -34,44 +29,30 @@ function App() {
     return () => clearInterval(intervalId);
   }, [isCounting]);
 
+  // Copy OTP to clipboard when clicked
+  const handleCopy = () => {
+    if (!otp) return;
+    navigator.clipboard.writeText(otp);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500); // hide "Copied!" after 1.5s
+  };
+
   return (
     <div className="container">
       <div className="card">
         <h1 id="otp-title">OTP Generator</h1>
-
         <h2
           id="otp-display"
-          onClick={handleCopyOtp}
-          style={{ cursor: otp ? "pointer" : "default", position: "relative" }}
+          className={copied ? "copied" : ""}
+          onClick={handleCopy}
         >
           {otp ? otp : "Click 'Generate OTP' to get a code"}
-          {copied && (
-            <span
-              style={{
-                position: "absolute",
-                top: "-1.5rem",
-                left: "50%",
-                transform: "translateX(-50%)",
-                backgroundColor: "#ff00ff",
-                color: "#fff",
-                padding: "0.2rem 0.5rem",
-                borderRadius: "4px",
-                fontSize: "0.8rem",
-                fontWeight: "600",
-                boxShadow: "0 0 5px #ff00ff",
-              }}
-            >
-              Copied!
-            </span>
-          )}
         </h2>
-
         <p id="otp-timer" aria-live="assertive">
           {isCounting
             ? `Expires in: ${secondsLeft} second${secondsLeft > 1 ? "s" : ""}`
             : otp && "OTP expired. Click the button to generate a new OTP."}
         </p>
-
         <button
           id="generate-otp-button"
           disabled={isCounting}
