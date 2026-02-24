@@ -35,7 +35,7 @@ function App() {
     if (!otp) return;
     navigator.clipboard.writeText(otp);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500); // hide "Copied!" after 1.5s
+    setTimeout(() => setCopied(false), 3000); // hide "Copied!" after 1.5s
   };
 
   return (
