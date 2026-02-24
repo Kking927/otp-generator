@@ -1,16 +1,11 @@
-/* Container - vibrant dark neon gradient with pink accent */
+
+/* Container - dark neon gradient background */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #1a1a2e 0%,    /* deep navy */
-    #3d0f5f 30%,   /* dark purple */
-    #7f00ff 60%,   /* bright purple */
-    #ff00ff 90%    /* neon pink highlight */
-  );
+  background: linear-gradient(135deg, #1a1a2e, #3d0f5f, #7f00ff); /* dark purple gradient */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 2rem;
   box-sizing: border-box;
@@ -28,7 +23,6 @@
   align-items: center;
   min-width: 320px;
   max-width: 400px;
-  position: relative; /* for tooltip */
 }
 
 /* OTP Title */
@@ -36,7 +30,7 @@
   font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
-  color: #ff00ff;
+  color: #ff00ff; /* neon magenta */
   text-shadow: 0 0 10px rgba(255,0,255,0.6);
   text-align: center;
 }
@@ -51,31 +45,6 @@
   text-align: center;
   width: fit-content;
   transition: all 0.3s ease;
-  text-shadow: 0 0 5px #ff00ff, 0 0 10px #e600ff, 0 0 20px #ff00ff;
-  cursor: pointer;
-  position: relative;
-}
-
-/* Tooltip for copy feedback */
-#otp-display::after {
-  content: "Copied!";
-  position: absolute;
-  top: -1.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #ff00ff;
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.2rem 0.5rem;
-  border-radius: 6px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-#otp-display.copied::after {
-  opacity: 1;
 }
 
 /* Countdown timer */
@@ -83,13 +52,13 @@
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   font-weight: 500;
-  color: #ff00ff;
+  color: #ff00ff; /* neon accent */
   opacity: 0.85;
   text-align: center;
 }
 
 #otp-timer.expired {
-  color: #ff3ec7;
+  color: #ff3ec7; /* bright neon pink when expired */
   font-weight: 600;
 }
 
@@ -98,7 +67,7 @@
   padding: 0.8rem 1.5rem;
   font-size: 1.4rem;
   font-weight: 700;
-  background-color: #bf00ff;
+  background-color: #bf00ff; /* deep neon purple */
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -111,7 +80,7 @@
 }
 
 #generate-otp-button:hover:not(:disabled) {
-  background-color: #e600ff;
+  background-color: #e600ff; /* brighter neon on hover */
   box-shadow: 0 0 20px rgba(230,0,255,0.7), 0 0 40px rgba(191,0,255,0.5);
   transform: translateY(-2px);
 }
@@ -124,6 +93,11 @@
   background-color: #ccc;
   cursor: not-allowed;
   box-shadow: none;
+}
+
+/* Neon effect on OTP digits */
+#otp-display {
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #e600ff, 0 0 20px #ff00ff;
 }
 
 /* Smooth transitions */
