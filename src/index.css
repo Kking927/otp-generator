@@ -1,1 +1,147 @@
+/* Container - dark neon gradient background */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,    /* deep navy */
+    #3d0f5f 25%,   /* dark purple */
+    #7f00ff 50%,   /* bright purple */
+    #ff00ff 75%,   /* neon pink highlight */
+    #4b0082 100%   /* indigo/purple for contrast */
+  );
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+}
 
+/* White card for OTP tool */
+.card {
+  background-color: #fff;
+  padding: 3rem 4rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  max-width: 400px;
+}
+
+/* OTP Title */
+#otp-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #ff00ff; /* neon magenta */
+  text-shadow: 0 0 10px rgba(255,0,255,0.6);
+  text-align: center;
+}
+
+/* OTP Display */
+#otp-display {
+  font-size: 2.5rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.25rem;
+  color: #111;
+  font-weight: 600;
+  text-align: center;
+  width: fit-content;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #e600ff, 0 0 20px #ff00ff;
+  cursor: pointer; /* indicates clickable */
+  position: relative;
+}
+
+/* Copied message tooltip */
+#otp-display.copied::after {
+  content: "Copied!";
+  position: absolute;
+  top: -1.5rem;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ff3ec7;
+  text-shadow: 0 0 5px #ff3ec7, 0 0 10px #ff00ff;
+  opacity: 1;
+  animation: fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Countdown timer */
+#otp-timer {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: #ff00ff; /* neon accent */
+  opacity: 0.85;
+  text-align: center;
+}
+
+#otp-timer.expired {
+  color: #ff3ec7; /* bright neon pink when expired */
+  font-weight: 600;
+}
+
+/* Generate OTP Button */
+#generate-otp-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: #bf00ff; /* deep neon purple */
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  width: fit-content;
+  min-width: 200px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(191,0,255,0.6);
+  transition: all 0.3s ease;
+}
+
+#generate-otp-button:hover:not(:disabled) {
+  background-color: #e600ff; /* brighter neon on hover */
+  box-shadow: 0 0 20px rgba(230,0,255,0.7), 0 0 40px rgba(191,0,255,0.5);
+  transform: translateY(-2px);
+}
+
+#generate-otp-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+#generate-otp-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Smooth transitions */
+#otp-display, #otp-timer {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 400px) {
+  .card {
+    padding: 2rem 2.5rem;
+  }
+  #otp-title {
+    font-size: 1.8rem;
+  }
+  #otp-display {
+    font-size: 2rem;
+  }
+  #generate-otp-button {
+    font-size: 1.2rem;
+    min-width: 160px;
+  }
+}
