@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./app.css";
+import "./index.css";
 
 function App() {
   const [otp, setOtp] = useState(null);
