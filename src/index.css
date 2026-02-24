@@ -1,18 +1,13 @@
-/* Reset / normalize defaults */
+/* index.css - only resets */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Global font and background defaults */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #111; /* fallback in case JS/CSS fails */
-  color: #fff; /* default text color */
 }
-
-/* Optional: basic links, buttons, etc. */
 a {
   text-decoration: none;
   color: inherit;
