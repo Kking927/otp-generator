@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import "./app.css";
-import "./index.css";
 
 function App() {
   const [otp, setOtp] = useState(null);
@@ -9,33 +7,27 @@ function App() {
 
   const isCounting = secondsLeft > 0;
 
-  // Generate a 6-digit OTP
   const generateOtp = () => Math.floor(100000 + Math.random() * 900000);
 
-  // Handle Generate OTP button
   const handleGenerateOtp = () => {
     setOtp(generateOtp());
     setSecondsLeft(5);
-    setCopied(false); // reset copied state when new OTP is generated
+    setCopied(false);
   };
 
-  // Countdown timer logic
   useEffect(() => {
     if (!isCounting) return;
-
     const intervalId = setInterval(() => {
-      setSecondsLeft((prev) => prev - 1);
+      setSecondsLeft(prev => prev - 1);
     }, 1000);
-
     return () => clearInterval(intervalId);
   }, [isCounting]);
 
-  // Copy OTP to clipboard when clicked
   const handleCopy = () => {
     if (!otp) return;
     navigator.clipboard.writeText(otp);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500); // hide "Copied!" after 1.5s
+    setTimeout(() => setCopied(false), 1500);
   };
 
   return (
