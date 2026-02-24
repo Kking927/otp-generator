@@ -64,7 +64,13 @@ function App() {
         <p id="otp-timer" aria-live="assertive">
           {isCounting
             ? `Expires in: ${secondsLeft} second${secondsLeft > 1 ? "s" : ""}`
-            : otp && "OTP expired. Click the button to generate a new OTP."}
+            : otp && (
+                <>
+                  OTP expired.
+                  <br />
+                  Click the button to generate a new OTP.
+                </>
+              )}
         </p>
 
         {/* Generate button */}
