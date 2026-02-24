@@ -6,12 +6,12 @@
   min-height: 100vh;
   background: linear-gradient(
     135deg,
-    #1a1a2e 0%,
-    #3d0f5f 25%,
-    #7f00ff 50%,
-    #ff00ff 75%,
-    #4b0082 100%
-  ); /* bigger gradient with neon pink */
+    #1a1a2e 0%,    /* deep navy */
+    #3d0f5f 25%,   /* dark purple */
+    #7f00ff 50%,   /* bright purple */
+    #ff00ff 75%,   /* neon pink highlight */
+    #4b0082 100%   /* indigo/purple for contrast */
+  );
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 2rem;
   box-sizing: border-box;
