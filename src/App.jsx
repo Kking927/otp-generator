@@ -47,7 +47,7 @@ function App() {
         <h2
           id="otp-display"
           className={copied ? "copied" : ""}
-          onClick={handleCopy}
+          onClick={otp ? handleCopy : undefined}
         >
           {otp ? otp : "Click\n 'Generate OTP'\n to get a code"}
         </h2>
