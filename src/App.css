@@ -81,7 +81,7 @@ html {
   color: #ff3ec7;
   text-shadow: 0 0 5px #ff3ec7, 0 0 10px #ff00ff;
   opacity: 1;
-  animation: fadeOut 1.5s forwards;
+  animation: fadeOut 3s forwards;
 }
 
 @keyframes fadeOut {
