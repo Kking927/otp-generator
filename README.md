@@ -1,8 +1,8 @@
 # OTP Generator
 
-**Live Demo:** [Add Vercel Link Here](#)
+**Live Demo:** [https://otp-generator-wine.vercel.app/]
 
-A sleek, responsive One-Time Password (OTP) generator built with **React** and **Vite**.  
+A One-Time Password (OTP) generator built with **React** and **Vite**.  
 This project demonstrates React hooks (`useState` and `useEffect`), dynamic UI updates, and modern front-end styling with CSS.
 
 ---
@@ -12,7 +12,6 @@ This project demonstrates React hooks (`useState` and `useEffect`), dynamic UI u
 - Generate secure 6-digit OTP codes
 - Countdown timer showing OTP expiration
 - Disable button while OTP is active
-- Responsive and visually appealing **neon-themed UI**
 - Modern React + Vite project structure
 
 ---
