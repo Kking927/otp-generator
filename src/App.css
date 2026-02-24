@@ -1,11 +1,17 @@
-
 /* Container - dark neon gradient background */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e, #3d0f5f, #7f00ff); /* dark purple gradient */
+  background: linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #3d0f5f 25%,
+    #7f00ff 50%,
+    #ff00ff 75%,
+    #4b0082 100%
+  ); /* bigger gradient with neon pink */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 2rem;
   box-sizing: border-box;
@@ -45,6 +51,29 @@
   text-align: center;
   width: fit-content;
   transition: all 0.3s ease;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #e600ff, 0 0 20px #ff00ff;
+  cursor: pointer; /* indicates clickable */
+  position: relative;
+}
+
+/* Copied message tooltip */
+#otp-display.copied::after {
+  content: "Copied!";
+  position: absolute;
+  top: -1.5rem;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ff3ec7;
+  text-shadow: 0 0 5px #ff3ec7, 0 0 10px #ff00ff;
+  opacity: 1;
+  animation: fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* Countdown timer */
@@ -93,11 +122,6 @@
   background-color: #ccc;
   cursor: not-allowed;
   box-shadow: none;
-}
-
-/* Neon effect on OTP digits */
-#otp-display {
-  text-shadow: 0 0 5px #ff00ff, 0 0 10px #e600ff, 0 0 20px #ff00ff;
 }
 
 /* Smooth transitions */
