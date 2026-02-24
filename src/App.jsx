@@ -49,7 +49,13 @@ function App() {
           className={copied ? "copied" : ""}
           onClick={otp ? handleCopy : undefined}
         >
-          {otp ? otp : "Click\n 'Generate OTP'\n to get a code"}
+          {otp ? otp : (
+  <>
+    Click <br />
+    Generate OTP <br />
+    to get a code
+  </>
+)}
         </h2>
 
         {/* Countdown / expiration message */}
