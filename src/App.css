@@ -1,24 +1,4 @@
-/* Container - vibrant dark neon gradient with more pink */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #1a1a2e 0%,      /* deep navy */
-    #3d0f5f 25%,     /* dark purple */
-    #7f00ff 50%,     /* bright purple */
-    #ff00ff 75%,     /* neon pink highlight */
-    #4b0082 100%     /* indigo/purple for contrast */
-  );
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 2rem;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-/* White card for OTP tool with neon glow */
+/* OTP Card */
 .card {
   background-color: #111; /* darker card for contrast */
   padding: 3rem 4rem;
@@ -41,12 +21,12 @@
   font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
-  color: #ff00ff; /* neon magenta */
+  color: #ff00ff;
   text-shadow: 0 0 10px rgba(255,0,255,0.6);
   text-align: center;
 }
 
-/* OTP Display with pulsing neon effect */
+/* OTP Display with pulsing neon */
 #otp-display {
   font-size: 2.5rem;
   margin-bottom: 1.2rem;
@@ -55,11 +35,7 @@
   font-weight: 600;
   text-align: center;
   width: fit-content;
-  text-shadow: 
-    0 0 5px #ff00ff, 
-    0 0 10px #ff3ec7, 
-    0 0 20px #ff00ff,
-    0 0 30px #e600ff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff3ec7, 0 0 20px #ff00ff, 0 0 30px #e600ff;
   animation: neonPulse 1.5s infinite alternate;
   transition: all 0.3s ease-in-out;
 }
@@ -73,19 +49,25 @@
   }
 }
 
+/* Hover effect & copy cursor */
+#otp-display:hover {
+  text-shadow: 0 0 8px #ff3ec7, 0 0 15px #ff00ff, 0 0 30px #e600ff;
+  cursor: pointer;
+}
+
 /* Countdown timer */
 #otp-timer {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   font-weight: 500;
-  color: #ff00ff; /* neon accent */
+  color: #ff00ff;
   opacity: 0.85;
   text-align: center;
   transition: all 0.3s ease-in-out;
 }
 
 #otp-timer.expired {
-  color: #ff3ec7; /* bright neon pink when expired */
+  color: #ff3ec7;
   font-weight: 600;
 }
 
@@ -94,7 +76,7 @@
   padding: 0.8rem 1.5rem;
   font-size: 1.4rem;
   font-weight: 700;
-  background-color: #ff00ff; /* neon pink */
+  background-color: #ff00ff;
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -107,7 +89,7 @@
 }
 
 #generate-otp-button:hover:not(:disabled) {
-  background-color: #ff3ec7; /* brighter neon pink on hover */
+  background-color: #ff3ec7;
   box-shadow: 0 0 25px rgba(255,0,255,0.8), 0 0 50px rgba(191,0,255,0.6);
   transform: translateY(-2px);
 }
@@ -122,12 +104,7 @@
   box-shadow: none;
 }
 
-#otp-display:hover {
-  text-shadow: 0 0 8px #ff3ec7, 0 0 15px #ff00ff, 0 0 30px #e600ff;
-  cursor: pointer;
-}
-
-/* Responsive for smaller screens */
+/* Responsive */
 @media (max-width: 400px) {
   .card {
     padding: 2rem 2.5rem;
