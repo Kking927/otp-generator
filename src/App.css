@@ -122,6 +122,11 @@
   box-shadow: none;
 }
 
+#otp-display:hover {
+  text-shadow: 0 0 8px #ff3ec7, 0 0 15px #ff00ff, 0 0 30px #e600ff;
+  cursor: pointer;
+}
+
 /* Responsive for smaller screens */
 @media (max-width: 400px) {
   .card {
