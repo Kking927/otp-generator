@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "./App.css"; // make sure App.css is in the same folder
+import "./App.css";
+import ".index.css";
 
 function App() {
   const [otp, setOtp] = useState(null);
