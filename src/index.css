@@ -24,7 +24,7 @@ html {
     #7f00ff 50%,
     #ff00ff 75%,
     #4b0082 100%
-  ); /* gradient with neon pink */
+  );
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 2rem;
   box-sizing: border-box;
@@ -48,7 +48,14 @@ html {
 #otp-title {
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(270deg, #bf00ff, #ff00ff, #e600ff);
+  background:  linear-gradient(
+    135deg,
+    #1a1a2e 0%,
+    #3d0f5f 25%,
+    #7f00ff 50%,
+    #ff00ff 75%,
+    #4b0082 100%
+  );
   background-size: 600% 600%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -73,7 +80,6 @@ html {
   width: fit-content;
   transition: all 0.3s ease;
   text-shadow: 0 0 5px #ff00ff, 0 0 10px #e600ff, 0 0 20px #ff00ff;
-  cursor: pointer;
   position: relative;
 }
 
