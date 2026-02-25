@@ -1,6 +1,6 @@
 # OTP Generator
 
-**Live Demo:** [https://otp-generator-3omo.vercel.app/]
+**Live Demo:** []
 
 A One-Time Password (OTP) generator built with **React** and **Vite**.  
 This project demonstrates React hooks (`useState` and `useEffect`), dynamic UI updates, and modern front-end styling with CSS.
