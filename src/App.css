@@ -47,11 +47,19 @@ html {
 /* OTP Title */
 #otp-title {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
   font-weight: 700;
-  color: #ff00ff; /* neon magenta */
-  text-shadow: 0 0 10px rgba(255,0,255,0.6);
+  background: linear-gradient(270deg, #bf00ff, #ff00ff, #e600ff);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
   text-align: center;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* OTP Display with clickable tooltip */
