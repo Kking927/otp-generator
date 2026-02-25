@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import ".index.css";
+import "./index.css";
 
 function App() {
   const [otp, setOtp] = useState(null);
@@ -16,7 +16,7 @@ function App() {
   const handleGenerateOtp = () => {
     setOtp(generateOtp());
     setSecondsLeft(5);
-    setCopied(false); // reset copied state when new OTP is generated
+    setCopied(false); // reset copied state
   };
 
   // Countdown timer
@@ -35,7 +35,7 @@ function App() {
     if (!otp) return;
     navigator.clipboard.writeText(otp);
     setCopied(true);
-    setTimeout(() => setCopied(false), 3000); // hide "Copied!" after 1.5s
+    setTimeout(() => setCopied(false), 2000); // show "Copied!" a little longer
   };
 
   return (
@@ -49,28 +49,25 @@ function App() {
           className={copied ? "copied" : ""}
           onClick={otp ? handleCopy : undefined}
         >
-          {otp ? (
-            otp
-          ) : (
+          {otp ? otp : (
             <>
-              Click <br />
-              Generate OTP <br />
-              to get a code
+              Click <br /> Generate OTP <br /> to get a code
             </>
           )}
         </h2>
 
-        {/* Countdown / expiration message */}
+        {/* Countdown / expiration message with line break */}
         <p id="otp-timer" aria-live="assertive">
-          {isCounting
-            ? `Expires in: ${secondsLeft} second${secondsLeft > 1 ? "s" : ""}`
-            : otp && (
-                <>
-                  OTP expired.
-                  <br />
-                  Click the button to generate a new OTP.
-                </>
-              )}
+          {isCounting ? (
+            `Expires in: ${secondsLeft} second${secondsLeft > 1 ? "s" : ""}`
+          ) : (
+            otp && (
+              <>
+                OTP expired.<br />
+                Click the button to generate a new OTP.
+              </>
+            )
+          )}
         </p>
 
         {/* Generate button */}
