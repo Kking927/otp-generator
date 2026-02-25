@@ -35,7 +35,7 @@ function App() {
     if (!otp) return;
     navigator.clipboard.writeText(otp);
     setCopied(true);
-    setTimeout(() => setCopied(false), 5000); // show "Copied!" a little longer
+    setTimeout(() => setCopied(false), 5000);
   };
 
   return (
@@ -46,7 +46,7 @@ function App() {
         {/* OTP display with copy functionality */}
         <h2
           id="otp-display"
-          className={copied ? "copied" : ""}
+          className={`${copied ? "copied" : ""} ${otp ? "clickable" : ""}`}
           onClick={otp ? handleCopy : undefined}
         >
           {otp ? otp : (
