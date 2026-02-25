@@ -48,22 +48,27 @@ html {
 #otp-title {
   font-size: 2rem;
   font-weight: 700;
-  background:  linear-gradient(
-    135deg,
-    #1a1a2e 0%,
-    #3d0f5f 25%,
-    #7f00ff 50%,
-    #ff00ff 75%,
-    #4b0082 100%
+  text-align: center;
+
+  /* Gradient with dark purples to bright pinks */
+  background: linear-gradient(
+    270deg,
+    #3d0f5f, /* deep purple */
+    #7f00ff, /* medium neon purple */
+    #bf00ff, /* bright neon magenta */
+    #ff00ff, /* neon pink */
+    #1a1a2e  /* loop back to dark navy */
   );
-  background-size: 600% 600%;
+
+  background-size: 600% 600%; /* large gradient for smooth flow */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientMove 5s ease infinite;
-  text-align: center;
+
+  /* Lava-lamp style animation */
+  animation: lavaLamp 30s ease infinite;
 }
 
-@keyframes gradientMove {
+@keyframes lavaLamp {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
