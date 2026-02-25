@@ -152,7 +152,6 @@ html {
 
 #generate-otp-button:disabled {
   background-color: #ccc;
-  cursor: not-allowed;
   box-shadow: none;
 }
 
