@@ -73,7 +73,6 @@ html {
   width: fit-content;
   transition: all 0.3s ease;
   text-shadow: 0 0 5px #ff00ff, 0 0 10px #e600ff, 0 0 20px #ff00ff;
-  cursor: pointer;
   position: relative;
 }
 
