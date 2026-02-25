@@ -77,6 +77,11 @@ html {
   position: relative;
 }
 
+/* Only show pointer when OTP is clickable */
+#otp-display.clickable {
+  cursor: pointer;
+}
+
 /* Show "Copied!" tooltip */
 #otp-display.copied::after {
   content: "Copied!";
