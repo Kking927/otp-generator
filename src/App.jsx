@@ -51,7 +51,7 @@ function App() {
         >
           {otp ? otp : (
             <>
-              Click <br /> Generate OTP <br /> to get a code
+              Click <br /> 'Generate OTP' <br /> to get a code
             </>
           )}
         </h2>
