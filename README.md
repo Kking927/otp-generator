@@ -16,7 +16,7 @@ This project demonstrates React hooks (`useState` and `useEffect`), dynamic UI u
 
 ---
 
-## Technologies Used
+## Tech Stack Used
 
 - **React 18** – Frontend library for building interactive UIs
 - **Vite** – Fast development server and build tool
