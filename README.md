@@ -22,3 +22,13 @@ This project demonstrates React hooks (`useState` and `useEffect`), dynamic UI u
 - **Vite** – Fast development server and build tool
 - **CSS3** – Custom styling with gradients, shadows, and transitions
 - **JavaScript ES6** – Modern syntax and modules
+
+## Skills Showcased
+
+---
+
+- React hooks (`useState` and `useEffect`) for dynamic UI  
+- Form handling and conditional rendering  
+- Countdown timer logic and state management  
+- Styling and responsive design with CSS3  
+- Modern project structure using Vite
